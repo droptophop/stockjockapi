@@ -26,7 +26,7 @@ namespace StockJockAPI.Storing.Repositories
 
         public User GetUserById(int id)
         {
-            throw new System.NotImplementedException();
+            return _db.Users.FirstOrDefault(u => u.Id == id);
         }
 
         public void AddUser(string username, string password)
