@@ -31,14 +31,13 @@ namespace StockJockAPI.Controllers
         [HttpGet]
         public ActionResult <List<User>> GetAllUsers()
         {
-            var userRepo = _userRepo;
 
-            return userRepo.GetAllUsers();
+            return _userRepo.GetAllUsers();
         }
 
         [Route("{id}", Name="GetUserById")]
         [HttpGet]
-        public ActionResult <User> GetUserById(int id)
+        public ActionResult GetUserById(int id)
         {
             var user = _userRepo.GetUserById(id);
 
@@ -112,8 +111,6 @@ namespace StockJockAPI.Controllers
                 var s = _stockFactory.LoadStock(symbol).GetAwaiter().GetResult();
 
                 _stockRepo.RemoveStock(userFound, s);
-
-                return Ok(StatusCode(201));
             }
 
             return NotFound();
