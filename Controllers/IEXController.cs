@@ -28,5 +28,16 @@ namespace StockJockAPI.Controllers
 
             return Ok(symbols);
         }
+
+        [Route("{symbol}")]
+        [HttpGet]
+        public async Task<ActionResult> GetStockQuote(string symbol)
+        {
+            ApiHelper.InitializeClient();
+            
+            Stock stockQuote = await _stockFactory.LoadStock(symbol);
+
+            return Ok(stockQuote);
+        }
     }
 }

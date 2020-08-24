@@ -1,7 +1,6 @@
 using System.Collections.Generic;
-using StockJockAPI.Domain.Models;
 
-namespace StockJockAPI.Domain
+namespace StockJockAPI.Domain.Models
 {
     public class User
     {

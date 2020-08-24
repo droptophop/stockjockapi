@@ -1,3 +1,5 @@
+using StockJockAPI.Domain.Models;
+
 namespace StockJockAPI.Domain.Factories
 {
     public class UserFactory
